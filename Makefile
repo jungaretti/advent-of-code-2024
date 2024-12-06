@@ -1,5 +1,5 @@
 build:
-	go build -o bin/bacon .
+	go build -o bin/aoc2024 .
 
 test:
 	go test ./...
