@@ -5,5 +5,5 @@ My solutions for [Advent of Code 2024](https://adventofcode.com/2024).
 ## Usage
 
 ```bash
-go run .
+go run . <day> <part>
 ```
