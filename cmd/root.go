@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"os"
 	"strconv"
+	"strings"
 
 	"github.com/spf13/cobra"
 )
@@ -62,11 +63,18 @@ func root(day, part int) (string, error) {
 		return "", fmt.Errorf("no solver for day %d", day)
 	}
 
+	inputFile := fmt.Sprintf("inputs/day%02d.txt", day)
+	input, err := os.ReadFile(inputFile)
+	if err != nil {
+		return "", fmt.Errorf("failed to read input file: %v", err)
+	}
+	lines := strings.Split(string(input), "\n")
+
 	switch part {
 	case 1:
-		return solver.Day1([]string{})
+		return solver.Day1(lines)
 	case 2:
-		return solver.Day2([]string{})
+		return solver.Day1(lines)
 	default:
 		return "", fmt.Errorf("no solver for part %d", part)
 	}
