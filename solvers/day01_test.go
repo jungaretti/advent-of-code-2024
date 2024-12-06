@@ -5,8 +5,9 @@ import (
 	"testing"
 )
 
-func TestDay1Solver_Day2(t *testing.T) {
-	solver := solvers.Day1Solver{}
+var day1Solver = solvers.Day1Solver{}
+
+func TestDay1Part1(t *testing.T) {
 	input := []string{
 		"3   4",
 		"4   3",
@@ -15,14 +16,21 @@ func TestDay1Solver_Day2(t *testing.T) {
 		"3   9",
 		"3   3",
 	}
+	expected := "11"
 
+	testExampleInput(t, day1Solver, 1, input, expected)
+}
+
+func TestDay1Part2(t *testing.T) {
+	input := []string{
+		"3   4",
+		"4   3",
+		"2   5",
+		"1   3",
+		"3   9",
+		"3   3",
+	}
 	expected := "31"
-	result, err := solver.Part2(input)
-	if err != nil {
-		t.Fatalf("expected no error, got %v", err)
-	}
 
-	if result != expected {
-		t.Fatalf("expected %v, got %v", expected, result)
-	}
+	testExampleInput(t, day1Solver, 2, input, expected)
 }
