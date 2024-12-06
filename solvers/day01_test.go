@@ -17,7 +17,7 @@ func TestDay1Solver_Day2(t *testing.T) {
 	}
 
 	expected := "31"
-	result, err := solver.Day2(input)
+	result, err := solver.Part2(input)
 	if err != nil {
 		t.Fatalf("expected no error, got %v", err)
 	}

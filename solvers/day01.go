@@ -8,7 +8,7 @@ import (
 
 type Day1Solver struct{}
 
-func (d Day1Solver) Day1(input []string) (string, error) {
+func (d Day1Solver) Part1(input []string) (string, error) {
 	leftValues := []int{}
 	rightValues := []int{}
 
@@ -45,7 +45,7 @@ func (d Day1Solver) Day1(input []string) (string, error) {
 	return strconv.Itoa(result), nil
 }
 
-func (d Day1Solver) Day2(input []string) (string, error) {
+func (d Day1Solver) Part2(input []string) (string, error) {
 	rightCount := map[int]int{}
 
 	for _, line := range input {

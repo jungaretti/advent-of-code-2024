@@ -72,9 +72,9 @@ func root(day, part int) (string, error) {
 
 	switch part {
 	case 1:
-		return solver.Day1(lines)
+		return solver.Part1(lines)
 	case 2:
-		return solver.Day2(lines)
+		return solver.Part2(lines)
 	default:
 		return "", fmt.Errorf("no solver for part %d", part)
 	}
