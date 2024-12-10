@@ -1,7 +1,8 @@
 package cmd
 
 import (
-	"advent-of-code-2024/solvers"
+	"advent-of-code-2024/days"
+	"advent-of-code-2024/days/day01"
 	"fmt"
 	"os"
 	"strconv"
@@ -54,8 +55,8 @@ func newRootCmd() *cobra.Command {
 }
 
 func root(day, part int) (string, error) {
-	solvers := map[int]solvers.Solver{
-		1: solvers.Day1Solver{},
+	solvers := map[int]days.Solver{
+		1: day01.Day01Solver{},
 	}
 
 	solver, exists := solvers[day]
@@ -72,9 +73,9 @@ func root(day, part int) (string, error) {
 
 	switch part {
 	case 1:
-		return solver.Part1(lines)
+		return solver.SolvePart1(lines)
 	case 2:
-		return solver.Part2(lines)
+		return solver.SolvePart2(lines)
 	default:
 		return "", fmt.Errorf("no solver for part %d", part)
 	}

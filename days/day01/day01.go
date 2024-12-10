@@ -1,14 +1,17 @@
-package solvers
+package day01
 
 import (
+	"advent-of-code-2024/days"
 	"sort"
 	"strconv"
 	"strings"
 )
 
-type Day1Solver struct{}
+type Day01Solver struct{}
 
-func (d Day1Solver) Part1(input []string) (string, error) {
+var _ days.Solver = Day01Solver{}
+
+func (d Day01Solver) SolvePart1(input []string) (string, error) {
 	leftValues := []int{}
 	rightValues := []int{}
 
@@ -45,7 +48,7 @@ func (d Day1Solver) Part1(input []string) (string, error) {
 	return strconv.Itoa(result), nil
 }
 
-func (d Day1Solver) Part2(input []string) (string, error) {
+func (d Day01Solver) SolvePart2(input []string) (string, error) {
 	rightCount := map[int]int{}
 
 	for _, line := range input {
