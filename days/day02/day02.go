@@ -27,7 +27,31 @@ func (d Day02Solver) SolvePart1(input []string) (string, error) {
 }
 
 func (d Day02Solver) SolvePart2(input []string) (string, error) {
-	return "", nil
+	reports, err := parseReports(input)
+	if err != nil {
+		return "", err
+	}
+
+	validReports := 0
+	for _, report := range reports {
+		if (allIncreasing(report) || allDecreasing(report)) && differsWithinBounds(report, 1, 3) {
+			validReports++
+			continue
+		}
+
+		for i := 0; i < len(report); i++ {
+			modifiedReport := make([]int, len(report))
+			copy(modifiedReport, report)
+			modifiedReport = append(modifiedReport[:i], modifiedReport[i+1:]...)
+
+			if (allIncreasing(modifiedReport) || allDecreasing(modifiedReport)) && differsWithinBounds(modifiedReport, 1, 3) {
+				validReports++
+				break
+			}
+		}
+	}
+
+	return strconv.Itoa(validReports), nil
 }
 
 func parseReports(input []string) ([][]int, error) {
