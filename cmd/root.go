@@ -51,6 +51,8 @@ func newRootCmd() *cobra.Command {
 		},
 	}
 
+	root.AddCommand(newScaffoldCmd())
+
 	return root
 }
 
