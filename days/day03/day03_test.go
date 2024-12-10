@@ -12,5 +12,7 @@ func TestDay03Part1(t *testing.T) {
 }
 
 func TestDay03Part2(t *testing.T) {
-	days.TestDayPart(t, Day03Solver{}, 2, []string{}, "")
+	days.TestDayPart(t, Day03Solver{}, 2, []string{
+		"xmul(2,4)&mul[3,7]!^don't()_mul(5,5)+mul(32,64](mul(11,8)undo()?mul(8,5))",
+	}, "48")
 }
