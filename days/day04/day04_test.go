@@ -21,5 +21,16 @@ func TestDay04Part1(t *testing.T) {
 }
 
 func TestDay04Part2(t *testing.T) {
-	days.TestDayPart(t, Day04Solver{}, 2, []string{}, "")
+	days.TestDayPart(t, Day04Solver{}, 2, []string{
+		"MMMSXXMASM",
+		"MSAMXMSMSA",
+		"AMXSXMAAMM",
+		"MSAMASMSMX",
+		"XMASAMXAMM",
+		"XXAMMXXAMA",
+		"SMSMSASXSS",
+		"SAXAMASAAA",
+		"MAMMMXMMMM",
+		"MXMXAXMASX",
+	}, "9")
 }
