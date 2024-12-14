@@ -6,6 +6,7 @@ import (
 	"advent-of-code-2024/days/day02"
 	"advent-of-code-2024/days/day03"
 	"advent-of-code-2024/days/day04"
+	"advent-of-code-2024/days/day14"
 	"fmt"
 	"os"
 	"strconv"
@@ -61,10 +62,11 @@ func newRootCmd() *cobra.Command {
 
 func root(day, part int) (string, error) {
 	solvers := map[int]days.Solver{
-		1: day01.Day01Solver{},
-		2: day02.Day02Solver{},
-		3: day03.Day03Solver{},
-		4: day04.Day04Solver{},
+		1:  day01.Day01Solver{},
+		2:  day02.Day02Solver{},
+		3:  day03.Day03Solver{},
+		4:  day04.Day04Solver{},
+		14: day14.Day14Solver{},
 	}
 
 	solver, exists := solvers[day]
